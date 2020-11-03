@@ -1,0 +1,14 @@
+{
+  "name": "meknick",
+  "version": "1.0.0",
+  "description": "This app provides you road side assistance if your vehicle breaks down amid of your journey. You can book mechanic available near by you instantly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ayush",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.0"
+  }
+}
