@@ -1,36 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
+
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Meknick - Keep your journey on</title>
 
-    <link rel="stylesheet" href="/styles/reset.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/header.css">
-    
+
     <script src="/node_modules/angular/angular.min.js"></script>
     <script src="/src/app.js"></script>
-    <script src="/src/header.js"></script>
 
 </head>
+
 <body>
     <header ng-include=" '/templates/header.html' " ng-controller="headerController"></header>
 
-
-
-
-
-
-
-
-
-
-
+    <section class="landing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <form action="#" class="request-form">
+                        <h2>Make your trip</h2>
+                        <div class="form-group">
+                            <label for="" class="label">Pick-up location</label>
+                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Drop-off location</label>
+                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="" class="label">Pick-up date</label>
+                                <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="" class="label">Drop-off date</label>
+                                <input type="text" class="form-control" id="book_off_date" placeholder="Date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="label">Pick-up time</label>
+                            <input type="text" class="form-control" id="time_pick" placeholder="Time">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Search Vehicle" class="btn btn-primary py-3 px-4">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img src="/assets/img/towing.svg" class="towing-image" alt="Intro image">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

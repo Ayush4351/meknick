@@ -1,21 +1,17 @@
-<div class="window">
-    <div class="header">
-        <div class="burger-container">
-            <div id="burger">
-                <div class="bar topBar"></div>
-                <div class="bar btmBar"></div>
-            </div>
+<div ng-class="class">
+    <div class="burger-container" ng-click="changeClass()">
+        <div id="burger">
+            <div class="bar topBar"></div>
+            <div class="bar btmBar"></div>
         </div>
-        <div class="icon icon-apple"></div>
-        <ul class="menu">
-            <li class="menu-item"><a href="#">Mac</a></li>
-            <li class="menu-item"><a href="#">iPad</a></li>
-            <li class="menu-item"><a href="#">iPhone</a></li>
-            <li class="menu-item"><a href="#">Watch</a></li>
-            <li class="menu-item"><a href="#">TV</a></li>
-            <li class="menu-item"><a href="#">Music</a></li>
-            <li class="menu-item"><a href="#">Support</a></li>
-        </ul>
-        <div class="shop icon icon-bag"></div>
     </div>
+    <div class="icon icon-apple"><ion-icon name="car-sport-outline"></ion-icon> <span>Meknick</span></div>
+    <ul class="menu">
+        <li class="menu-item"><a href="#"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+        <li class="menu-item"><a href="#"><ion-icon name="calendar-outline"></ion-icon> My Appointments</a></li>
+        <li class="menu-item"><a href="#"><ion-icon name="build-outline"></ion-icon> Services</a></li>
+        <li class="menu-item"><a href="#"><ion-icon name="newspaper-outline"></ion-icon> About Us</a></li>
+        <li class="menu-item"><a href="#"><ion-icon name="call-outline"></ion-icon> Contact Us</a></li>
+    </ul>
+    <div class="shop icon icon-bag"></div>
 </div>
