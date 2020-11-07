@@ -9,6 +9,7 @@
     <title>Meknick - Keep your journey on</title>
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/angularjs-datepicker/dist/angular-datepicker.min.css">
     <link rel="stylesheet" href="/styles/style.css">
 
     <script src="/node_modules/angular/angular.min.js"></script>
@@ -17,48 +18,286 @@
 </head>
 
 <body>
+
+    <!--==========================
+      Header Section
+    ============================-->
     <header ng-include=" '/templates/header.html' " ng-controller="headerController"></header>
 
+
+    <!--==========================
+      Hero Section
+    ============================-->
     <section class="landing">
+
         <div class="container">
+
             <div class="row">
+
                 <div class="col-lg-6 col-md-12">
-                    <form action="#" class="request-form">
-                        <h2>Make your trip</h2>
-                        <div class="form-group">
-                            <label for="" class="label">Pick-up location</label>
-                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="label">Drop-off location</label>
-                            <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="" class="label">Pick-up date</label>
-                                <input type="text" class="form-control" id="book_pick_date" placeholder="Date">
+
+                    <div class="appointment-booking">
+
+                        <div class="wrapper">
+
+                            <div class="form-section">
+
+                                <h3>Book appointment</h3>
+                                <h6>To continue with Us</h6>
+
+                                <form action="#" method="post" name="appointmentForm" class="signin-form"
+                                    ng-controller="appointmentController">
+
+                                    <div class="form-row">
+
+                                        <div class="col-lg-6 col-md-12">
+
+                                            <div class="form-input">
+                                                <input type="text" ng-model="fullName" name="fullName"
+                                                    placeholder="Full Name" required minlength="3" maxlength="15"
+                                                    autofocus>
+                                            </div>
+
+                                            <div ng-messages="appointmentForm.fullName.$error">
+                                                <p class="text text-danger" ng-show="appointmentForm.fullName.$touched"
+                                                    ng-message="required">Name is required</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    3 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 15 characters
+                                                    are allowed</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-12">
+
+                                            <div class="form-input">
+                                                <input type="email" ng-model="email" minlength="5" maxlength="30"
+                                                    name="email" id="email" required>
+                                            </div>
+
+                                            <div ng-messages="appointmentForm.email.$error">
+                                                <p class="text text-danger" ng-message="required"
+                                                    ng-show="appointmentForm.email.$touched">Email is required</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    5 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 15 characters
+                                                    are allowed</p>
+                                                <p class="text text-danger" ng-message="email">Not a valid email!</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col-lg-12">
+
+                                            <div class="form-input">
+                                                <input type="text" ng-model="mobile" name="mobile"
+                                                    placeholder="Mobile number" required minlength="10" maxlength="10"
+                                                    autofocus>
+                                            </div>
+
+
+                                            <div ng-messages="appointmentForm.mobile.$error">
+                                                <p class="text text-danger" ng-show="appointmentForm.mobile.$touched"
+                                                    ng-message="required">Phone number is required</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    10 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 10 characters
+                                                    are allowed</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-lg-6 col-md-12">
+
+                                            <div class="form-input">
+                                                <input type="text" ng-model="pickup" name="pickup"
+                                                    placeholder="Pick Up Location" required minlength="3"
+                                                    maxlength="200" autofocus>
+                                            </div>
+
+                                            <div ng-messages="appointmentForm.pickup.$error">
+                                                <p class="text text-danger" ng-show="appointmentForm.pickup.$touched"
+                                                    ng-message="required">Please enter pickup location</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    3 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 200
+                                                    characters are allowed</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-12">
+
+                                            <div class="form-input">
+                                                <input type="text" ng-model="dropoff" name="dropoff"
+                                                    placeholder="Drop Off Location" minlength="3" maxlength="200"
+                                                    autofocus>
+                                            </div>
+
+                                            <div ng-messages="appointmentForm.dropoff.$error">
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    3 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 200
+                                                    characters are allowed</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="form-input">
+                                                <datepicker date-format="dd/MM/yyyy">
+                                                    <input type="text" ng-model="date" name="pickupdate"
+                                                        placeholder="Pick Up Date" required />
+                                                </datepicker>
+                                            </div>
+
+                                            <div ng-messages="appointmentForm.pickupdate.$error">
+                                                <p class="text text-danger" ng-message="required"
+                                                    ng-show="appointmentForm.pickupdate.$touched">Please choose pickup
+                                                    date</p>
+                                                <p class="text text-danger" ng-message="date">Not a valid date!</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="form-input">
+                                                <input type="text" name="pickupTime" placeholder="Pick Up Time" required
+                                                    autofocus>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="col-lg-12">
+                                            <div class="form-input">
+                                                <input type="text" name="manufacturer"
+                                                    placeholder="Vehicle Manufacturer" required autofocus>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <div class="form-input">
+                                                <input type="text" name="model" placeholder="Vehicle Model" required
+                                                    autofocus>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary submit-button mt-4">Book Now</button>
+
+                                </form>
+
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="" class="label">Drop-off date</label>
-                                <input type="text" class="form-control" id="book_off_date" placeholder="Date">
-                            </div>
+
                         </div>
-                        <div class="form-group">
-                            <label for="" class="label">Pick-up time</label>
-                            <input type="text" class="form-control" id="time_pick" placeholder="Time">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Search Vehicle" class="btn btn-primary py-3 px-4">
-                        </div>
-                    </form>
+
+                    </div>
+
                 </div>
+
                 <div class="col-lg-6 col-md-12">
                     <img src="/assets/img/towing.svg" class="towing-image" alt="Intro image">
                 </div>
+
             </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services" class="section-bg">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Services</h3>
+                <p>Choose from a wide assortment of car services from periodic car servicing, car care services, wheel care services, cashless insurance claims and much more!</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #fceef3;">
+                            <ion-icon name="ion-ios-analytics-outline" style="color: #ff689b;"></ion-icon>
+                        </div>
+                        <h4 class="title"><a href="">Periodic services</a></h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                            excepturi sint occaecati cupiditate non provident</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
+                                style="color: #e98e06;"></i></div>
+                        <h4 class="title"><a href="">AC Services</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat tarad limino ata</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline"
+                                style="color: #3fcdc7;"></i></div>
+                        <h4 class="title"><a href="">Tyres and wheel care</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline"
+                                style="color:#41cf2e;"></i></div>
+                        <h4 class="title"><a href="">Cleaning and Detailing</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
+                                style="color: #2282ff;"></i></div>
+                        <h4 class="title"><a href="">Denting Painting</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                            praesentium voluptatum deleniti atque</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline"
+                                style="color: #8660fe;"></i></div>
+                        <h4 class="title"><a href="">Batteries</a></h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                            tempore, cum soluta nobis est eligendi</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
+
+    <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
+    <script src="/node_modules/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
 </body>

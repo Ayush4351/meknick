@@ -2,11 +2,10 @@
 body {
   margin: 0;
   line-height: 1.4;
-  background: #e1e1e1;
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 0;
   left: 0;
@@ -155,6 +154,11 @@ body {
   font-weight: 200;
   width: 100%;
 }
+
+.header ul.menu li.menu-item a:hover {
+  color: #00D679;
+}
+
 .header.menu-opened {
   height: 100%;
   background-color: #000;

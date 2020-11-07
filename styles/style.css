@@ -1,19 +1,292 @@
-@import './header.css';
+@import "./header.css";
 
+/* Common Css */
+button,
+input,
+select {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+button,
+.btn,
+select {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-header h3 {
+  font-size: 36px;
+  color: #413e66;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+.section-header p {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  padding-bottom: 60px;
+  color: #535074;
+  width: 50%;
+}
+
+/* Section with background
+    --------------------------------*/
+
+.section-bg {
+  background: #f5f8fd;
+}
+
+
+/* Hero Section */
 .landing {
-    margin-top: 50px;
-    padding-top: 20px;
-    height: 100vh;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  height: 120%;
 }
 
 .towing-image {
-    max-width: 100%;
-    height: auto;
-    padding-top: 20%;
+  max-width: 100%;
+  height: auto;
+  padding-top: 20%;
 }
 
 @media (min-width: 992px) {
-    .towing-image {
-        max-width: 120%;
-    }   
+  .towing-image {
+    max-width: 120%;
+  }
+}
+
+.appointment-booking .form-section {
+  /* max-width: 400px; */
+  margin: 20px auto;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 9px 24px 5px rgba(0, 0, 0, 0.04);
+  background: #fff;
+}
+
+.appointment-booking .form-section h3 {
+  font-size: 30px;
+  line-height: 40px;
+  color: #090909;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.appointment-booking .form-section h6 {
+  font-size: 15px;
+  color: #5a5a5a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.appointment-booking .form-input input[type="email"],
+.appointment-booking .form-input input[type="password"],
+.appointment-booking .form-input input[type="text"],
+.appointment-booking .form-input input[type="date"],
+.appointment-booking .form-input input[type="time"] {
+  background: #fff;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  color: #000;
+  -webkit-appearance: none;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.appointment-booking .form-input input[type="email"]:focus,
+.appointment-booking .form-input input[type="password"]:focus,
+.appointment-booking .form-input input[type="date"]:focus,
+.appointment-booking .form-input input[type="time"]:focus,
+.appointment-booking .form-input input[type="text"]:focus {
+  background: #fff;
+  color: #090909;
+  border: 1px solid #00d679;
+  border-radius: 4px;
+}
+
+.appointment-booking .form-input {
+  margin: 10px 0 10px 0;
+  background: rgba(249, 250, 255, 0.09);
+  display: grid;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+}
+
+.appointment-booking .checkbox {
+  width: 16px;
+  height: 16px;
+  color: #f5f9fc;
+  background: #304659;
+  float: left;
+}
+
+.appointment-booking p.remember {
+  line-height: 20px;
+  color: #5a5a5a;
+  font-size: 13px;
+}
+
+.appointment-booking button.btn {
+  opacity: 0.8;
+  width: 100%;
+}
+
+.appointment-booking button.btn:hover {
+  opacity: 1;
+}
+
+.appointment-booking .check-reminder input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.appointment-booking .check-reminder {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  margin: 20px 0px 0 0;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.appointment-booking .check-reminder input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.appointment-booking .checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #e1e9f0;
+}
+
+.appointment-booking .ccheck-reminder:hover input ~ .checkmark {
+  background-color: #00d679;
+}
+
+.appointment-booking .check-reminder input:checked ~ .checkmark {
+  background-color: #00d679;
+}
+
+.appointment-booking .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.appointment-booking .check-reminder input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.appointment-booking .check-reminder .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.submit-button {
+  transition: 0.3s ease-out;
+  display: inline-block;
+  line-height: 52px;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px 30px;
+  border: none;
+  background-color: #00d679;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+/* Services Section
+--------------------------------*/
+
+#services {
+  padding: 60px 0 40px 0;
+}
+
+#services .box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+#services .box:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#services .icon {
+  margin: 0 auto 15px auto;
+  padding-top: 12px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#services .icon i {
+  font-size: 36px;
+  line-height: 1;
+}
+
+#services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#services .title a {
+  color: #111;
+}
+
+#services .box:hover .title a {
+  color: #1bb1dc;
+  text-decoration: none;
+}
+
+#services .description {
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
 }
