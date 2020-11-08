@@ -10,7 +10,7 @@ Demo Video Link:-
 
 Assigment Report File Link (also uploaded on UMS)
 
-[Click here to download](https://drive.google.com)
+[Click here to download](https://drive.google.com/file/d/1da6viNU30b4tyB5dIu9-tISU9XTCOs2S/view?usp=sharing)
 
 
 ## Prerequisites
