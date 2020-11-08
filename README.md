@@ -6,8 +6,11 @@ This project is assignment of subject INT219 in Lovely Professional University
 
 Demo Video Link:-
 
+[Click here to watch](https://youtu.be/q0PW85KEs_8)
 
-[Click here to watch](http://www.dropwizard.io/1.0.2/docs/)
+Assigment Report File Link (also uploaded on UMS)
+
+[Click here to download](https://drive.google.com)
 
 
 ## Prerequisites
