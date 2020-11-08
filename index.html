@@ -54,8 +54,7 @@
 
                                             <div class="form-input">
                                                 <input type="text" ng-model="fullName" name="fullName"
-                                                    placeholder="Full Name" required minlength="3" maxlength="15"
-                                                    autofocus>
+                                                    placeholder="Full Name" minlength="3" maxlength="15" required>
                                             </div>
 
                                             <div ng-messages="appointmentForm.fullName.$error">
@@ -72,8 +71,8 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="email" ng-model="email" minlength="5" maxlength="30"
-                                                    name="email" id="email" required>
+                                                <input type="email" ng-model="email" name="email" placeholder="Email id"
+                                                    minlength="5" maxlength="30" required>
                                             </div>
 
                                             <div ng-messages="appointmentForm.email.$error">
@@ -95,8 +94,7 @@
 
                                             <div class="form-input">
                                                 <input type="text" ng-model="mobile" name="mobile"
-                                                    placeholder="Mobile number" required minlength="10" maxlength="10"
-                                                    autofocus>
+                                                    placeholder="Mobile number" minlength="10" maxlength="10" required>
                                             </div>
 
 
@@ -118,8 +116,8 @@
 
                                             <div class="form-input">
                                                 <input type="text" ng-model="pickup" name="pickup"
-                                                    placeholder="Pick Up Location" required minlength="3"
-                                                    maxlength="200" autofocus>
+                                                    placeholder="Pick Up Location" minlength="3" maxlength="200"
+                                                    required>
                                             </div>
 
                                             <div ng-messages="appointmentForm.pickup.$error">
@@ -137,8 +135,7 @@
 
                                             <div class="form-input">
                                                 <input type="text" ng-model="dropoff" name="dropoff"
-                                                    placeholder="Drop Off Location" minlength="3" maxlength="200"
-                                                    autofocus>
+                                                    placeholder="Drop Off Location" minlength="3" maxlength="200">
                                             </div>
 
                                             <div ng-messages="appointmentForm.dropoff.$error">
@@ -172,26 +169,61 @@
                                         </div>
 
                                         <div class="col-lg-6 col-md-12">
+
                                             <div class="form-input">
-                                                <input type="text" name="pickupTime" placeholder="Pick Up Time" required
-                                                    autofocus>
+                                                <input type="time" ng-model="time" name="pickupTime"
+                                                    placeholder="Pick Up Time" required>
                                             </div>
+
+                                            <div ng-messages="appointmentForm.pickupTime.$error">
+                                                <p class="text text-danger" ng-message="required"
+                                                    ng-show="appointmentForm.pickupTime.$touched">Please choose pickup
+                                                    time</p>
+                                                <p class="text text-danger" ng-message="time">Not a valid time format!
+                                                </p>
+                                            </div>
+
                                         </div>
 
                                     </div>
 
                                     <div class="form-row">
                                         <div class="col-lg-12">
+
                                             <div class="form-input">
-                                                <input type="text" name="manufacturer"
-                                                    placeholder="Vehicle Manufacturer" required autofocus>
+                                                <input type="text" ng-model="manufacturer" name="manufacturer"
+                                                    placeholder="Vehicle Manufacturer" minlength="3" maxlength="20"
+                                                    required>
                                             </div>
+
+                                            <div ng-messages="appointmentForm.manufacturer.$error">
+                                                <p class="text text-danger" ng-message="required"
+                                                    ng-show="appointmentForm.manufacturer.$touched">Manufacturer name is
+                                                    required</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    3 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 20 characters
+                                                    are allowed</p>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-12 col-md-12">
+
                                             <div class="form-input">
-                                                <input type="text" name="model" placeholder="Vehicle Model" required
-                                                    autofocus>
+                                                <input type="text" ng-model="vehicleModel" name="vehicleModel"
+                                                    placeholder="Vehicle Model" minlength="3" maxlength="50" required>
                                             </div>
+
+                                            <div ng-messages="appointmentForm.vehicleModel.$error">
+                                                <p class="text text-danger" ng-message="required"
+                                                    ng-show="appointmentForm.vehicleModel.$touched">Vehicle model name
+                                                    is required</p>
+                                                <p class="text text-danger" ng-message="minlength">Please enter at least
+                                                    3 characters</p>
+                                                <p class="text text-danger" ng-message="maxlength">Maximum 50 characters
+                                                    are allowed</p>
+                                            </div>
+
                                         </div>
                                     </div>
 
@@ -227,7 +259,8 @@
 
             <header class="section-header">
                 <h3>Services</h3>
-                <p>Choose from a wide assortment of car services from periodic car servicing, car care services, wheel care services, cashless insurance claims and much more!</p>
+                <p>Choose from a wide assortment of car services from periodic car servicing, car care services, wheel
+                    care services, cashless insurance claims and much more!</p>
             </header>
 
             <div class="row">
@@ -235,7 +268,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
                         <div class="icon" style="background: #fceef3;">
-                            <ion-icon name="ion-ios-analytics-outline" style="color: #ff689b;"></ion-icon>
+                            <ion-icon name="calendar-outline" size="large" style="color: #ff689b;"></ion-icon>
                         </div>
                         <h4 class="title"><a href="">Periodic services</a></h4>
                         <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
@@ -244,8 +277,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
-                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
-                                style="color: #e98e06;"></i></div>
+                        <div class="icon" style="background: #fff0da;">
+                            <ion-icon name="snow-outline" size="large" style="color: #e98e06;"></ion-icon>
+                        </div>
                         <h4 class="title"><a href="">AC Services</a></h4>
                         <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                             ex ea commodo consequat tarad limino ata</p>
@@ -254,8 +288,9 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
-                        <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline"
-                                style="color: #3fcdc7;"></i></div>
+                        <div class="icon" style="background: #e6fdfc;">
+                            <ion-icon name="aperture-outline" size="large" style="color: #3fcdc7;"></ion-icon>
+                        </div>
                         <h4 class="title"><a href="">Tyres and wheel care</a></h4>
                         <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                             dolore eu fugiat nulla pariatur</p>
@@ -263,8 +298,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
-                        <div class="icon" style="background: #eafde7;"><i class="ion-ios-speedometer-outline"
-                                style="color:#41cf2e;"></i></div>
+                        <div class="icon" style="background: #eafde7;">
+                            <ion-icon name="water-outline" size="large" style="color:#41cf2e;"></ion-icon>
+                        </div>
                         <h4 class="title"><a href="">Cleaning and Detailing</a></h4>
                         <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                             deserunt mollit anim id est laborum</p>
@@ -273,8 +309,9 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
-                        <div class="icon" style="background: #e1eeff;"><i class="ion-ios-world-outline"
-                                style="color: #2282ff;"></i></div>
+                        <div class="icon" style="background: #e1eeff;">
+                            <ion-icon name="color-palette-outline" size="large" style="color: #2282ff;"></ion-icon>
+                        </div>
                         <h4 class="title"><a href="">Denting Painting</a></h4>
                         <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
                             praesentium voluptatum deleniti atque</p>
@@ -282,8 +319,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box">
-                        <div class="icon" style="background: #ecebff;"><i class="ion-ios-clock-outline"
-                                style="color: #8660fe;"></i></div>
+                        <div class="icon" style="background: #ecebff;">
+                            <ion-icon name="battery-charging-outline" size="large" style="color: #8660fe;"></ion-icon>
+                        </div>
                         <h4 class="title"><a href="">Batteries</a></h4>
                         <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
                             tempore, cum soluta nobis est eligendi</p>
@@ -295,6 +333,36 @@
         </div>
     </section>
 
+
+    <!--==========================
+      Newsletter Section
+    ============================-->
+    <section class="newsletter">
+        <div class="container inside">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="subImage-container">
+                        <img src="/assets/img/newsletter.svg" class="subscription-image" alt="subscription-image">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="subscription-form mt-5" ng-controller="subscriptionController">
+                        <h3 class="text-center mt-2">Subscribe Us</h3>
+                        <p class="text-center">Lets keep in touch! Please subscribe to our newsletter and stay updated about latest offers</p>
+                        <form action="" method="GET">
+                            <div class="form-input">
+                                <input type="text" ng-model="username" name="username" placeholder="Full Name" required minlength="3" maxlength="15">
+                            </div>
+                            <div class="form-input">
+                                <input type="email" ng-model="emailId" name="emailId" placeholder="Email id" required minlength="5" maxlength="50">
+                            </div>
+                            <button class="btn btn-primary btn-block submit-button">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
     <script src="/node_modules/angularjs-datepicker/dist/angular-datepicker.min.js"></script>

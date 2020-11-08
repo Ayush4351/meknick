@@ -43,7 +43,6 @@ a {
   background: #f5f8fd;
 }
 
-
 /* Hero Section */
 .landing {
   margin-top: 50px;
@@ -289,4 +288,60 @@ a {
   line-height: 28px;
   margin-bottom: 0;
   text-align: left;
+}
+
+.newsletter {
+  height: 100vh;
+  justify-content: center;
+  padding-top: 5rem;
+  background: rgba(99, 194, 110, 0.1);
+}
+
+.subscription-image {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .subscription-image {
+    max-width: 100%;
+  }
+}
+
+.subscription-form {
+  box-sizing: border-box;
+  background: #fff;
+  padding: 1rem 1rem;
+  box-shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-form .form-input input[type="email"],
+.subscription-form .form-input input[type="text"] {
+  background: #fff;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+  color: #000;
+  -webkit-appearance: none;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.subscription-form .form-input input[type="email"]:focus,
+.subscription-form .form-input input[type="text"]:focus {
+  background: #fff;
+  color: #090909;
+  border: 1px solid #00d679;
+  border-radius: 4px;
+}
+
+.subscription-form .form-input {
+  margin: 10px 0 10px 0;
+  background: rgba(249, 250, 255, 0.09);
+  display: grid;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
 }
