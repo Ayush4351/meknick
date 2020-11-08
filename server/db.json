@@ -1,0 +1,23 @@
+{
+  "appointments": [
+    {
+      "id": 1,
+      "fullName": "Ayush",
+      "email": "ayush4351@gmail.com",
+      "mobile": "Ayush",
+      "pickup": "LPU",
+      "dropoff": "LPU",
+      "pickupdate": "11/11/2020",
+      "pickupTime": "09:38 PM",
+      "manufacturer": "Honda",
+      "vehicleModel": "City 5th Gen"
+    }
+  ],
+  "subscribedUsers": [
+    {
+      "id": 1,
+      "username": "Ayush Gupta",
+      "email": "ayush4351@outlook.com"
+    }
+  ]
+}

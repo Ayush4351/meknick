@@ -45,7 +45,7 @@
                                 <h3>Book appointment</h3>
                                 <h6>To continue with Us</h6>
 
-                                <form action="#" method="post" name="appointmentForm" class="signin-form"
+                                <form ng-submit="submitForm()" name="appointmentForm" class="signin-form"
                                     ng-controller="appointmentController">
 
                                     <div class="form-row">
@@ -53,7 +53,7 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="fullName" name="fullName"
+                                                <input type="text" ng-model="data.fullName" name="fullName"
                                                     placeholder="Full Name" minlength="3" maxlength="15" required>
                                             </div>
 
@@ -71,7 +71,7 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="email" ng-model="email" name="email" placeholder="Email id"
+                                                <input type="email" ng-model="data.email" name="email" placeholder="Email id"
                                                     minlength="5" maxlength="30" required>
                                             </div>
 
@@ -93,7 +93,7 @@
                                         <div class="col-lg-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="mobile" name="mobile"
+                                                <input type="text" ng-model="data.mobile" name="mobile"
                                                     placeholder="Mobile number" minlength="10" maxlength="10" required>
                                             </div>
 
@@ -115,7 +115,7 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="pickup" name="pickup"
+                                                <input type="text" ng-model="data.pickup" name="pickup"
                                                     placeholder="Pick Up Location" minlength="3" maxlength="200"
                                                     required>
                                             </div>
@@ -134,7 +134,7 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="dropoff" name="dropoff"
+                                                <input type="text" ng-model="data.dropoff" name="dropoff"
                                                     placeholder="Drop Off Location" minlength="3" maxlength="200">
                                             </div>
 
@@ -153,10 +153,7 @@
 
                                         <div class="col-lg-6 col-md-12">
                                             <div class="form-input">
-                                                <datepicker date-format="dd/MM/yyyy">
-                                                    <input type="text" ng-model="date" name="pickupdate"
-                                                        placeholder="Pick Up Date" required />
-                                                </datepicker>
+                                                <input type="date" ng-model="data.pickupdate" name="pickupdate" placeholder="Pick Up Date" required />
                                             </div>
 
                                             <div ng-messages="appointmentForm.pickupdate.$error">
@@ -171,7 +168,7 @@
                                         <div class="col-lg-6 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="time" ng-model="time" name="pickupTime"
+                                                <input type="time" ng-model="data.time" name="pickupTime"
                                                     placeholder="Pick Up Time" required>
                                             </div>
 
@@ -191,7 +188,7 @@
                                         <div class="col-lg-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="manufacturer" name="manufacturer"
+                                                <input type="text" ng-model="data.manufacturer" name="manufacturer"
                                                     placeholder="Vehicle Manufacturer" minlength="3" maxlength="20"
                                                     required>
                                             </div>
@@ -210,7 +207,7 @@
                                         <div class="col-lg-12 col-md-12">
 
                                             <div class="form-input">
-                                                <input type="text" ng-model="vehicleModel" name="vehicleModel"
+                                                <input type="text" ng-model="data.vehicleModel" name="vehicleModel"
                                                     placeholder="Vehicle Model" minlength="3" maxlength="50" required>
                                             </div>
 
@@ -227,7 +224,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary submit-button mt-4">Book Now</button>
+                                    <button type="submit" ng-click="Submit" class="btn btn-primary submit-button mt-4">{{buttonValue}}</button>
 
                                 </form>
 
@@ -346,23 +343,28 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <div class="subscription-form mt-5" ng-controller="subscriptionController">
+                    <div class="subscription-form mt-5">
                         <h3 class="text-center mt-2">Subscribe Us</h3>
                         <p class="text-center">Lets keep in touch! Please subscribe to our newsletter and stay updated about latest offers</p>
-                        <form action="" method="GET">
+                        <form ng-submit="subscribe()" name="subscriptionForm" ng-controller="subscriptionController">
                             <div class="form-input">
-                                <input type="text" ng-model="username" name="username" placeholder="Full Name" required minlength="3" maxlength="15">
+                                <input type="text" ng-model="subscribeUser.username" name="username" placeholder="Full Name" required minlength="3" maxlength="15">
                             </div>
                             <div class="form-input">
-                                <input type="email" ng-model="emailId" name="emailId" placeholder="Email id" required minlength="5" maxlength="50">
+                                <input type="email" ng-model="subscribeUser.email" name="email" placeholder="Email id" required minlength="5" maxlength="50">
                             </div>
-                            <button class="btn btn-primary btn-block submit-button">Subscribe Now</button>
+                            <button ng-click="Submit" class="btn btn-primary btn-block submit-button">{{subscribeButton}}</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!--==========================
+      Footer Section
+    ============================-->
+    <footer ng-include=" '/templates/footer.html' "></footer>
 
     <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
     <script src="/node_modules/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
